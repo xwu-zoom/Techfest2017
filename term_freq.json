@@ -1,0 +1,220 @@
+{
+  "axes": [
+    {
+      "scale": "x",
+      "type": "x"
+    },
+    {
+      "scale": "y",
+      "type": "y"
+    }
+  ],
+  "data": [
+    {
+      "name": "table",
+      "values": [
+        {
+          "col": "data",
+          "idx": "#ZoomInfoWebinar",
+          "val": 9
+        },
+        {
+          "col": "data",
+          "idx": "amp",
+          "val": 7
+        },
+        {
+          "col": "data",
+          "idx": "\u2026",
+          "val": 6
+        },
+        {
+          "col": "data",
+          "idx": "sales",
+          "val": 5
+        },
+        {
+          "col": "data",
+          "idx": "RT",
+          "val": 3
+        },
+        {
+          "col": "data",
+          "idx": "#InsideSalesTrends",
+          "val": 3
+        },
+        {
+          "col": "data",
+          "idx": "challenge",
+          "val": 3
+        },
+        {
+          "col": "data",
+          "idx": "challenges",
+          "val": 3
+        },
+        {
+          "col": "data",
+          "idx": "@AA_ISP",
+          "val": 3
+        },
+        {
+          "col": "data",
+          "idx": "hiring",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "go",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "#contentmarketing",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "Not",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "worth",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "overcome",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "Register",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "reps",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "video",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "teams",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "stats",
+          "val": 2
+        }
+      ]
+    },
+    {
+      "name": "stats",
+      "source": "table",
+      "transform": [
+        {
+          "keys": [
+            "data.idx"
+          ],
+          "type": "facet"
+        },
+        {
+          "type": "stats",
+          "value": "data.val"
+        }
+      ]
+    }
+  ],
+  "height": 500,
+  "legends": [],
+  "marks": [
+    {
+      "from": {
+        "data": "table",
+        "transform": [
+          {
+            "keys": [
+              "data.col"
+            ],
+            "type": "facet"
+          },
+          {
+            "height": "data.val",
+            "point": "data.idx",
+            "type": "stack"
+          }
+        ]
+      },
+      "marks": [
+        {
+          "properties": {
+            "enter": {
+              "fill": {
+                "field": "data.col",
+                "scale": "color"
+              },
+              "width": {
+                "band": true,
+                "offset": -1,
+                "scale": "x"
+              },
+              "x": {
+                "field": "data.idx",
+                "scale": "x"
+              },
+              "y": {
+                "field": "y",
+                "scale": "y"
+              },
+              "y2": {
+                "field": "y2",
+                "scale": "y"
+              }
+            }
+          },
+          "type": "rect"
+        }
+      ],
+      "type": "group"
+    }
+  ],
+  "padding": "auto",
+  "scales": [
+    {
+      "domain": {
+        "data": "table",
+        "field": "data.idx"
+      },
+      "name": "x",
+      "range": "width",
+      "type": "ordinal",
+      "zero": false
+    },
+    {
+      "domain": {
+        "data": "stats",
+        "field": "sum"
+      },
+      "name": "y",
+      "nice": true,
+      "range": "height"
+    },
+    {
+      "domain": {
+        "data": "table",
+        "field": "data.col"
+      },
+      "name": "color",
+      "range": "category20",
+      "type": "ordinal"
+    }
+  ],
+  "width": 960
+}
